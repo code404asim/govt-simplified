@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gov Simplified — Pakistan Public Support Services</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- AOS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <link rel="icon" href="LOGO1.png" type="image/png" />
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #212529;
+      background-color: #F8F9FA;
+    }
+    .navbar {
+      background-color: #01411C;
+    }
+    .navbar .nav-link {
+      color: #fff !important;
+      position: relative;
+    }
+    .navbar .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      left: 0;
+      bottom: -5px;
+      background: #FFD700;
+      transition: 0.3s;
+    }
+    .navbar .nav-link:hover::after {
+      width: 100%;
+    }
+    .hero {
+      background: linear-gradient(135deg, #01411C, #016D35);
+      color: #fff;
+      padding: 100px 0;
+      text-align: center;
+    }
+    .hero h1 {
+      font-weight: 700;
+    }
+    .btn-gold {
+      background-color: #FFD700;
+      color: #01411C;
+      font-weight: 600;
+    }
+    .btn-outline-gold {
+      border: 2px solid #FFD700;
+      color: #FFD700;
+      font-weight: 600;
+    }
+    .btn-gold:hover, .btn-outline-gold:hover {
+      background-color: #01411C;
+      color: #FFD700;
+    }
+    .card {
+      border: none;
+      border-radius: 1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .footer {
+      background-color: #01411C;
+      color: #fff;
+      padding: 40px 0;
+    }
+    .footer a {
+      color: #FFD700;
+      text-decoration: none;
+    }
+    .footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html"><img src="LOGO1.png" alt="error" style="width:62px;height:62px;object-fit:cover;">GOV SIMPLIFIED</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#eligibility">Eligibility</a></li>
+          <li class="nav-item"><a class="nav-link" href="#apply">How to Apply</a></li>
+          <li class="nav-item"><a class="nav-link" href="#faq">FAQs</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero d-flex flex-column justify-content-center align-items-center">
+    <div class="container">
+      <h1 data-aos="fade-up">Pakistan Public Support Services</h1>
+      <p class="lead mb-4" data-aos="fade-up" data-aos-delay="200">Guiding Citizens for Welfare & Government Documents</p>
+      <a href="#services" class="btn btn-gold me-2" data-aos="fade-up" data-aos-delay="400">Explore Services</a>
+      <a href="#apply" class="btn btn-outline-gold" data-aos="fade-up" data-aos-delay="600">How to Apply</a>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4" data-aos="fade-up">Our Services</h2>
+      <div class="row g-4">
+        <div class="col-md-4" data-aos="fade-up">
+          <div class="card text-center p-4">
+            <div class="mb-3"><i class="fa-solid fa-money-bill-wave fa-2x text-warning"></i></div>
+            <h5>Elderly Pension</h5>
+            <p>Monthly pension support for senior citizens above 60 years.</p>
+            <a href="https://www.eobi.gov.pk/" target="_blank" class="btn btn-gold btn-sm">Apply Now</a>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="card text-center p-4">
+            <div class="mb-3"><i class="fa-solid fa-utensils fa-2x text-warning"></i></div>
+            <h5>Food Subsidy</h5>
+            <p>Discounted rates on essential items through Utility Stores.</p>
+            <a href="https://usc.org.pk/" target="_blank" class="btn btn-gold btn-sm">Apply Now</a>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+          <div class="card text-center p-4">
+            <div class="mb-3"><i class="fa-solid fa-house fa-2x text-warning"></i></div>
+            <h5>Low-Cost Housing</h5>
+            <p>Affordable housing for low-income families under NPHS.</p>
+            <a href="https://nphp.nadra.gov.pk/" target="_blank" class="btn btn-gold btn-sm">Apply Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Eligibility -->
+  <section id="eligibility" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-4" data-aos="fade-up">Eligibility Criteria</h2>
+      <div class="row g-4">
+        <div class="col-md-6" data-aos="fade-right">
+          <ul class="list-group">
+            <li class="list-group-item">Valid CNIC</li>
+            <li class="list-group-item">Pakistani Citizenship</li>
+            <li class="list-group-item">Proof of Residence</li>
+            <li class="list-group-item">Income Certificate</li>
+          </ul>
+        </div>
+        <div class="col-md-6" data-aos="fade-left">
+          <div class="alert alert-warning">Verification required via 
+            <a href="https://www.nadra.gov.pk/" target="_blank">NADRA</a>
+          </div>
+          <div class="accordion" id="specialCats">
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#dis">Persons with Disabilities</button></h2>
+              <div id="dis" class="accordion-collapse collapse" data-bs-parent="#specialCats">
+                <div class="accordion-body">Disability ID card required.</div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#widow">Widows & Orphans</button></h2>
+              <div id="widow" class="accordion-collapse collapse" data-bs-parent="#specialCats">
+                <div class="accordion-body">Special BISP support available.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How to Apply -->
+  <section id="apply" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4" data-aos="fade-up">How to Apply</h2>
+      <ul class="nav nav-tabs" id="applyTabs" role="tablist">
+        <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#online">Online</button></li>
+        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#offline">In-Person</button></li>
+      </ul>
+      <div class="tab-content p-4 border border-top-0">
+        <div class="tab-pane fade show active" id="online">
+          <ol>
+            <li>Create Account</li>
+            <li>Fill Application Form</li>
+            <li>Upload Documents</li>
+            <li>Submit Application</li>
+          </ol>
+          <a href="https://www.eobi.gov.pk/" target="_blank" class="btn btn-gold btn-sm">Apply Pension</a>
+          <a href="https://usc.org.pk/" target="_blank" class="btn btn-gold btn-sm">Apply Subsidy</a>
+          <a href="https://nphp.nadra.gov.pk/" target="_blank" class="btn btn-gold btn-sm">Apply Housing</a>
+        </div>
+        <div class="tab-pane fade" id="offline">
+          <ol>
+            <li>Visit nearest office</li>
+            <li>Collect Form</li>
+            <li>Submit with documents</li>
+            <li>Receive receipt</li>
+          </ol>
+          <button class="btn btn-gold" data-bs-toggle="modal" data-bs-target="#officeModal">Find Nearest Office</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal -->
+  <div class="modal fade" id="officeModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Find Nearest Office</h5>
+          <button class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <select class="form-select mb-3" id="province">
+            <option selected disabled>Select Province</option>
+            <option value="punjab">Punjab</option>
+            <option value="sindh">Sindh</option>
+            <option value="kp">Khyber Pakhtunkhwa</option>
+            <option value="balochistan">Balochistan</option>
+          </select>
+          <select class="form-select mb-3" id="district" disabled>
+            <option selected disabled>Select District</option>
+          </select>
+          <button class="btn btn-gold w-100" onclick="findOffice()">Search</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <section id="faq" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-4">FAQs</h2>
+      <div class="accordion" id="faqAcc">
+        <div class="accordion-item">
+          <h2 class="accordion-header"><button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#q1">What documents are required?</button></h2>
+          <div id="q1" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
+            <div class="accordion-body">CNIC, residence proof, income certificate.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#q2">Processing time?</button></h2>
+          <div id="q2" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
+            <div class="accordion-body">Varies by program: 2–4 weeks avg.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Contact Us</h2>
+      <div class="row g-4">
+        <div class="col-md-4 text-center">
+          <i class="fa-solid fa-phone fa-2x text-warning mb-2"></i>
+          <h6>Helpline</h6>
+          <p>0800-12345 (9am–5pm)</p>
+        </div>
+        <div class="col-md-4 text-center">
+          <i class="fa-solid fa-envelope fa-2x text-warning mb-2"></i>
+          <h6>Email</h6>
+          <p>support@gov.pk</p>
+        </div>
+        <div class="col-md-4 text-center">
+          <i class="fa-solid fa-building fa-2x text-warning mb-2"></i>
+          <h6>Head Office</h6>
+          <p>Islamabad, Pakistan</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer text-center">
+    <div class="container">
+      <p>Quick Links: 
+        <a href="https://www.bisp.gov.pk/" target="_blank">BISP</a> | 
+        <a href="https://www.nadra.gov.pk/" target="_blank">NADRA</a> | 
+        <a href="https://www.pass.gov.pk/" target="_blank">PASS</a>
+      </p>
+      <div class="mb-2">
+        <a href="#"><i class="fab fa-facebook fa-lg me-2"></i></a>
+        <a href="#"><i class="fab fa-twitter fa-lg me-2"></i></a>
+        <a href="#"><i class="fab fa-youtube fa-lg me-2"></i></a>
+        <a href="#"><i class="fab fa-instagram fa-lg"></i></a>
+      </div>
+      <p class="mb-0">&copy; <span id="year"></span> Gov Simplified. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('province').addEventListener('change', function(){
+      document.getElementById('district').disabled = false;
+    });
+    function findOffice(){
+      alert('Redirecting to Google Maps for nearest office...');
+      window.open('https://maps.google.com', '_blank');
+    }
+  </script>
+</body>
+</html>

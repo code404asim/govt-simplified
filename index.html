@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>GOV SIMPLIFIED — Pakistan | Guide to Government Services</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="icon" href="LOGO1.png" type="image/png" />
+
+  <style>
+    :root{
+      --pak-green: #01411C;
+      --gold: #FFD700;
+      --bg: #0a8a3096; /* you chose this earlier */
+      --text: #212529;
+      --muted: #ececec;
+      --card-radius: 12px;
+      --glass: rgba(255,255,255,0.7);
+    }
+
+    html, body { height: 100%; }
+    body {
+      font-family: 'Poppins', Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      scroll-behavior: smooth;
+    }
+
+    .navbar-custom {
+      background: linear-gradient(90deg, rgba(1,65,28,1) 0%, rgba(3,95,42,1) 100%);
+      box-shadow: 0 6px 18px rgba(1,65,28,0.18);
+    }
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      font-weight: 700;
+      letter-spacing: .4px;
+      color: #fff !important;
+    }
+    .brand-flag {
+      font-size: 1.2rem;
+      transform: translateY(-1px);
+    }
+    .nav-link {
+      color: rgba(255,255,255,0.92) !important;
+      font-weight: 600;
+    }
+    .nav-link:hover {
+      color: var(--gold) !important;
+    }
+
+    .btn-apply {
+      background: var(--gold);
+      color: var(--pak-green);
+      font-weight: 600;
+      border-radius: 10px;
+      padding: .45rem .9rem;
+      box-shadow: 0 6px 12px rgba(1,65,28,0.12);
+    }
+    .btn-apply:hover {
+      filter: brightness(.95);
+    }
+
+    .hero {
+      background:
+        linear-gradient(180deg, rgba(1,65,28,0.06), rgba(1,65,28,0.00)),
+        url('') center/cover no-repeat;
+      padding: 4.5rem 0 3rem;
+    }
+    .hero-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.85));
+      border-radius: 14px;
+      padding: 1.4rem;
+      box-shadow: 0 10px 30px rgba(2,48,20,0.08);
+    }
+    .hero h1 {
+      font-size: clamp(1.6rem, 3.6vw, 2.4rem);
+      margin-bottom: .3rem;
+    }
+    .hero p.lead {
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .feature-card {
+      border-radius: var(--card-radius);
+      transition: transform .28s ease, box-shadow .28s ease;
+      overflow: hidden;
+      border: 1px solid rgba(1,65,28,0.06);
+      background: #fff;
+    }
+    .feature-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 36px rgba(2,48,20,0.06);
+    }
+    .feature-icon {
+      width: 56px; height: 56px; border-radius: 12px;
+      display: inline-flex; align-items: center; justify-content: center;
+      background: linear-gradient(135deg, rgba(1,65,28,0.08), rgba(255,215,0,0.06));
+      color: var(--pak-green); font-size: 1.4rem;
+    }
+
+    .cards-row {
+      gap: 1.2rem;
+    }
+
+    .testimonial {
+      border-radius: 12px;
+      padding: 1.2rem;
+      background: linear-gradient(180deg, #fff, #fbfbfb);
+      box-shadow: 0 8px 20px rgba(1,65,28,0.04);
+    }
+
+    footer .footer-inner {
+      background: linear-gradient(90deg, rgba(1,65,28,1), rgba(3,95,42,1));
+      color: #fff;
+      padding: 2rem 1rem;
+      border-radius: 10px;
+    }
+    footer a { color: #fff; }
+    .small-note {
+      color: rgba(255,255,255,0.85);
+      font-size: .92rem;
+    }
+
+    @media (min-width: 992px) {
+      .hero { padding-top: 6rem; }
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+    .pill {
+      border-radius: 999px;
+      padding: .15rem .6rem;
+      background: rgba(1,65,28,0.06);
+      color: var(--pak-green);
+      font-weight: 600;
+      font-size: .85rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="LOGO1.png" alt="error" style="width:62px;height:62px;object-fit:cover;">
+        <div>
+          <div style="line-height:1;">GOV <span style="color:var(--gold)">SIMPLIFIED</span></div>
+          <small style="font-weight:600; color: rgba(255,255,255,0.85);">Guide • Documents • Portals</small>
+        </div>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample"
+        aria-controls="navbarsExample" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon" style="filter: invert(1) brightness(2) contrast(0.9);"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarsExample">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="govsimplified(id and documents).html">ID & Documents</a></li>
+          <li class="nav-item"><a class="nav-link" href="govsimplified(Taxes).html">Taxes</a></li>
+          <li class="nav-item"><a class="nav-link" href="govsimplified(Healthcare).html">Healthcare</a></li>
+          <li class="nav-item"><a class="nav-link" href="govsimplified(Public Support & Welfare).html">Public Support</a></li>
+          <li class="nav-item ms-3 d-flex">
+            <a class="btn btn-apply" href="#search-services">Find Service</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-7" data-aos="fade-right">
+          <div class="hero-card">
+            <h1>Government services, explained simply for Pakistan.</h1>
+            <p class="lead">Step-by-step guidance for CNIC, passport, driving licence, taxes, welfare programs and more — with official portal links and downloadable checklists.</p>
+
+            <div class="d-flex gap-2 flex-wrap">
+              <a class="btn btn-lg btn-outline-success" href="govsimplified(id and documents).html"><i class="bi bi-person-check me-2"></i> Get ID & Documents</a>
+              <a class="btn btn-lg btn-apply" href="#search-services"><i class="bi bi-search me-2"></i> Find Service</a>
+            </div>
+
+            <div class="mt-3 text-muted small">
+              <span class="me-3"><i class="bi bi-shield-lock me-1"></i> Official guidance</span>
+              <span class="me-3"><i class="bi bi-clock-history me-1"></i> Save time</span>
+              <span><i class="bi bi-people-fill me-1"></i> Trusted for Pakistan</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-5 d-none d-lg-block" data-aos="fade-left">
+          <div class="card h-100 p-3" style="border-radius:14px;">
+            <div class="row g-2">
+              <div class="col-12">
+                <div class="p-3" style="border-radius:12px; background: linear-gradient(90deg, rgba(1,65,28,0.05), rgba(255,215,0,0.02));">
+                  <h5 class="mb-1">Quick actions</h5>
+                  <p class="muted mb-0">Jump straight to the most requested portals.</p>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="d-flex flex-column gap-2">
+                  <button class="btn btn-light d-flex align-items-center justify-content-between" onclick="openDetails('id')">
+                    CNIC / Passport <i class="bi bi-box-arrow-up-right"></i>
+                  </button>
+                  <button class="btn btn-light d-flex align-items-center justify-content-between" onclick="openDetails('tax')">
+                    Income Tax / NTN <i class="bi bi-box-arrow-up-right"></i>
+                  </button>
+                  <button class="btn btn-light d-flex align-items-center justify-content-between" onclick="openDetails('health')">
+                    Sehat / Hospitals <i class="bi bi-box-arrow-up-right"></i>
+                  </button>
+                  <button class="btn btn-light d-flex align-items-center justify-content-between" onclick="openDetails('support')">
+                    Ehsaas & Welfare <i class="bi bi-box-arrow-up-right"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <main class="my-5">
+    <div class="container">
+
+      <section id="search-services" class="mb-5" data-aos="fade-up">
+        <div class="d-flex align-items-center justify-content-between mb-3">
+          <div>
+            <h3 class="mb-0">Popular services</h3>
+            <small class="muted">Frequently used guides & portals</small>
+          </div>
+          <div class="d-none d-md-block">
+            <span class="pill">Official links • Free</span>
+          </div>
+        </div>
+
+        <div class="row cards-row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+          <div class="col">
+            <div class="p-3 feature-card h-100">
+              <div class="d-flex align-items-start gap-3">
+                <div class="feature-icon"><i class="bi bi-credit-card-2-front"></i></div>
+                <div>
+                  <h5 class="mb-1">CNIC & NADRA</h5>
+                  <p class="muted mb-2">Apply, renew, and track your national identity (CNIC / NADRA services).</p>
+                  <div class="d-flex gap-2">
+                    <button class="btn btn-sm btn-outline-success btn-details" data-section="id">Quick view</button>
+                    <a href="https://www.nadra.gov.pk/" class="btn btn-sm btn-outline-primary" target="_blank">Official NADRA</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="p-3 feature-card h-100">
+              <div class="d-flex align-items-start gap-3">
+                <div class="feature-icon"><i class="bi bi-receipt"></i></div>
+                <div>
+                  <h5 class="mb-1">Taxes & FBR</h5>
+                  <p class="muted mb-2">File returns, get NTN and quick help on tax steps.</p>
+                  <div class="d-flex gap-2">
+                    <button class="btn btn-sm btn-outline-success btn-details" data-section="tax">Quick view</button>
+                    <a href="https://www.fbr.gov.pk/" class="btn btn-sm btn-outline-primary" target="_blank">Official FBR</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="p-3 feature-card h-100">
+              <div class="d-flex align-items-start gap-3">
+                <div class="feature-icon"><i class="bi bi-heart-pulse"></i></div>
+                <div>
+                  <h5 class="mb-1">Healthcare</h5>
+                  <p class="muted mb-2">Sehat Card, public hospitals & health programs.</p>
+                  <div class="d-flex gap-2">
+                    <button class="btn btn-sm btn-outline-success btn-details" data-section="health">Quick view</button>
+                    <a href="https://sehatsahulat.com.pk/" class="btn btn-sm btn-outline-primary" target="_blank">Sehat Sahulat KP</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="p-3 feature-card h-100">
+              <div class="d-flex align-items-start gap-3">
+                <div class="feature-icon"><i class="bi bi-hand-thumbs-up"></i></div>
+                <div>
+                  <h5 class="mb-1">Public Support</h5>
+                  <p class="muted mb-2">Ehsaas, BISP & welfare program portals.</p>
+                  <div class="d-flex gap-2">
+                    <button class="btn btn-sm btn-outline-success btn-details" data-section="support">Quick view</button>
+                    <a href="https://www.pmo.gov.pk/ehsaas.php" class="btn btn-sm btn-outline-primary" target="_blank">Ehsaas Program</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- (other sections remain same) -->
+
+    </div>
+  </main>
+
+  <footer class="mt-5">
+    <div class="container">
+      <div class="footer-inner d-flex flex-column flex-md-row align-items-center justify-content-between">
+        <div>
+          <div style="font-weight:700;">GOV <span style="color:var(--gold)">SIMPLIFIED</span></div>
+          <div class="small-note">Helping citizens of Pakistan access government services with ease.</div>
+        </div>
+        <div class="text-end mt-3 mt-md-0">
+          <div class="small-note">&copy; 2025 GOV SIMPLIFIED. All rights reserved.</div>
+          <div class="mt-2">
+            <a class="me-3" href="#"><i class="bi bi-facebook"></i></a>
+            <a class="me-3" href="#"><i class="bi bi-twitter"></i></a>
+            <a class="me-3" href="#"><i class="bi bi-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- DETAILS MODAL -->
+  <div class="modal fade" id="detailsModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header" style="background: linear-gradient(90deg, var(--pak-green), rgba(3,95,42,0.8)); color: white;">
+          <h5 class="modal-title" id="detailsTitle">Details</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="detailsBody">
+        </div>
+        <div class="modal-footer">
+          <a id="detailsOpenLink" class="btn btn-outline-primary" href="#" target="_blank">Open official portal</a>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      once: true,
+      duration: 700,
+    });
+
+    const contentMap = {
+      id: {
+        title: "ID & Documents — CNIC / Passport / Driving Licence",
+        body: `
+          <p>Find step-by-step instructions to apply, renew or modify your CNIC / NADRA services.</p>
+          <ul>
+            <li>NADRA official site: <a href="https://www.nadra.gov.pk/" target="_blank">nadra.gov.pk</a></li>
+            <li>Visit your local NADRA center for biometric and documentation.</li>
+            <li>Always carry required documents: photos, proof of residence, previous CNIC.</li>
+          </ul>
+        `,
+        url: "https://www.nadra.gov.pk/"
+      },
+      tax: {
+        title: "Taxes & FBR — File Income Tax / Get NTN",
+        body: `
+          <p>Guidance for registering with FBR and filing tax returns.</p>
+          <ul>
+            <li>Download your NTN or register on FBR’s portal: <a href="https://www.fbr.gov.pk/" target="_blank">fbr.gov.pk</a></li>
+            <li>Gather salary slips, bank statement & deduction details.</li>
+            <li>Submit online or via authorized e-filing services.</li>
+          </ul>
+        `,
+        url: "https://www.fbr.gov.pk/"
+      },
+      health: {
+        title: "Healthcare — Sehat Card & Public Health",
+        body: `
+          <p>Information on Sehat Sahulat, KP health programs and free hospital services.</p>
+          <ul>
+            <li>Sehat Sahulat KP official: <a href="https://sehatsahulat.com.pk/" target="_blank">sehatsahulat.com.pk</a></li>
+            <li>Check if you are eligible, find empanelled hospitals and free treatment options.</li>
+            <li>Keep your CNIC and local health records ready when applying.</li>
+          </ul>
+        `,
+        url: "https://sehatsahulat.com.pk/"
+      },
+      support: {
+        title: "Public Support & Welfare — Ehsaas, BISP & Social Programs",
+        body: `
+          <p>Overview on leading welfare & support initiatives.</p>
+          <ul>
+            <li>Ehsaas Program official (PMO): <a href="https://www.pmo.gov.pk/ehsaas.php" target="_blank">pmo.gov.pk/ehsaas.php</a></li>
+            <li>Visit 8171 portal or BISP sites for registration & status.</li>
+            <li>Keep your CNIC and family documents ready for verification.</li>
+          </ul>
+        `,
+        url: "https://www.pmo.gov.pk/ehsaas.php"
+      }
+    };
+
+    function openDetails(key) {
+      const modalTitle = document.getElementById('detailsTitle');
+      const modalBody = document.getElementById('detailsBody');
+      const openLink = document.getElementById('detailsOpenLink');
+      const data = contentMap[key] || { title: "Info", body: "<p>Coming soon.</p>", url: "#" };
+      modalTitle.textContent = data.title;
+      modalBody.innerHTML = data.body;
+      openLink.href = data.url;
+      new bootstrap.Modal(document.getElementById('detailsModal')).show();
+    }
+
+    document.querySelectorAll('.btn-details').forEach(btn => {
+      btn.addEventListener('click', () => {
+        openDetails(btn.dataset.section);
+      });
+    });
+
+    // Highlight nav based on scroll
+    const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
+    function onScroll() {
+      let fromTop = window.scrollY + 120;
+      navLinks.forEach(link => {
+        const section = document.querySelector(link.hash);
+        if (!section) return;
+        if (section.offsetTop <= fromTop && section.offsetTop + section.offsetHeight > fromTop) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+    }
+    window.addEventListener('scroll', onScroll);
+    onScroll();
+
+  </script>
+</body>
+</html>

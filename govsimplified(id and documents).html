@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gov Simplified — Pakistan Government Services</title>
+
+  <link rel="icon" href="LOGO1.png" type="image/png" />
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    :root{
+      --primary: #0b5ed7; /* professional blue */
+      --accent: #198754;  /* green accent for actions */
+      --muted: #000000;
+      --bg: #f4f7fb;
+      --card: #ffffff;
+      --glass: rgba(255,255,255,0.7);
+    }
+
+    html,body{height:100%}
+    body{
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      /* background: linear-gradient(180deg, #eef5ff 0%, #f8fbff 100%); */
+      background-color: rgb(201, 224, 201);
+      color:#222;
+      margin:0;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    /* NAV */
+    .navbar{
+      /* background: linear-gradient(90deg, rgba(11,94,215,1) 0%, rgba(10,72,150,1) 100%); */
+      /* background: linear-gradient(to right, #003366, #66cc99); */
+      background: linear-gradient(90deg, rgba(1,65,28,1) 0%, rgba(3,95,42,1) 100%);
+    }
+    .navbar .navbar-brand{
+      font-weight:700; color:#fff;
+      letter-spacing:0.2px;
+    }
+    .nav-link{ color: rgba(255,255,255,0.9) !important; }
+    .nav-link:hover{ color: #fff !important; opacity:0.95; }
+
+    /* HERO */
+    .hero{
+      padding:48px 0;
+      background: linear-gradient(180deg, rgba(11,94,215,0.06) 0%, rgba(25,135,84,0.03) 100%);
+    }
+    .hero-card{
+      background: linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.75));
+      border-radius:12px;
+      padding:24px;
+      box-shadow: 0 8px 30px rgba(12,40,80,0.08);
+      border:1px solid rgba(11,94,215,0.06);
+    }
+
+    .search-input .form-control{
+      border-radius: 12px 0 0 12px;
+      border-right: 0;
+      box-shadow: none;
+    }
+    .search-btn{
+      border-radius: 0 12px 12px 0;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+    }
+
+    /* Services grid */
+    .service-card{
+      background: var(--card);
+      border-radius: 12px;
+      padding:16px;
+      border:1px solid rgba(11,94,215,0.04);
+      transition: transform .18s ease, box-shadow .18s ease;
+      height:100%;
+      display:flex;
+      flex-direction:column;
+    }
+    .service-card:hover{
+      transform: translateY(-6px);
+      box-shadow: 0 18px 35px rgba(10,72,150,0.07);
+    }
+    .service-icon{
+      width:56px; height:56px;
+      border-radius:10px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      font-size:24px;
+      color:white;
+      margin-right:12px;
+    }
+    .service-head{ display:flex; align-items:center; margin-bottom:8px; }
+    .service-body{ flex:1; font-size:0.95rem; color:#333; }
+    .service-foot{ margin-top:12px; }
+
+    .badge-region{ font-size:0.72rem; }
+
+    /* FAQ */
+    .faq-card{ background: linear-gradient(180deg, #fff, #fbfeff); border-radius:10px; padding:18px; box-shadow: 0 6px 20px rgba(12,40,80,0.03); }
+
+    /* Footer */
+    footer{
+      margin-top:48px;
+      /* background: linear-gradient(90deg, rgba(11,94,215,1) 0%, rgba(10,72,150,1) 100%); */
+      background: linear-gradient(to right, #003366, #66cc99);
+      color:#fff;
+      padding:28px 0;
+    }
+    footer a{ color: #cfe9ff; text-decoration:none; }
+    footer a:hover{ color:#fff; text-decoration:underline; }
+
+    /* Utilities */
+    .muted{ color:var(--muted); }
+    .small-note{ font-size:0.88rem; color:var(--muted); }
+
+    /* Responsive tweaks */
+    @media (max-width:767px){
+      .hero{ padding:28px 0; }
+      .hero-card{ padding:16px; }
+      .service-icon{ width:46px; height:46px; font-size:20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="LOGO1.png" alt="logo" class="me-2 rounded" style="width:62px;height:62px;object-fit:cover;">
+        <span>Gov Simplified</span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto me-3 mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+
+        <div class="d-flex align-items-center gap-2">
+          <!-- Language switcher (simple) -->
+          <div class="dropdown me-2">
+            <button class="btn btn-sm btn-outline-light dropdown-toggle" id="langBtn" data-bs-toggle="dropdown">English</button>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="langBtn">
+              <li><a class="dropdown-item lang-option" href="#" data-lang="en">English</a></li>
+              <li><a class="dropdown-item lang-option" href="#" data-lang="ur">اردو (Soon)</a></li>
+            </ul>
+          </div>
+          <a class="btn btn-light btn-sm" href="#services">Explore</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container">
+      <div class="hero-card row align-items-center g-3">
+        <div class="col-lg-7">
+          <h1 class="display-6 fw-bold mb-2">Gov Simplified — Pakistan Government Services</h1>
+          <p class="lead small-note mb-3">Clear, simple and trusted guidance for citizens — documents required, step-by-step process, and official links to apply online.</p>
+
+          <div class="d-flex gap-3 align-items-start">
+            <div class="search-input flex-grow-1">
+              <div class="input-group">
+                <input id="searchInput" type="search" class="form-control" placeholder="Search services: e.g., CNIC, Passport, Pension..." aria-label="search">
+                <button id="searchBtn" class="btn search-btn" type="button"><i class="bi bi-search"></i> Search</button>
+              </div>
+              <div class="small-note mt-2">Tip: Try keywords like <em>CNIC, Passport, Driving</em>.</div>
+            </div>
+            <div class="text-end d-none d-lg-block">
+              <a href="#services" class="btn btn-outline-primary">View Services</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-5 text-center d-none d-lg-block">
+          <!-- Decorative illustration -->
+          <img src="crousel image.png" alt="gov illustration" class="img-fluid rounded" style="max-height:220px; object-fit:cover;">
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- SERVICES -->
+  <section id="services" class="py-5">
+    <div class="container">
+      <div class="d-flex align-items-center justify-content-between mb-4">
+        <h2 class="h4 mb-0">All Government Services</h2>
+        <div class="small-note">Showing <span id="visibleCount">16</span> services</div>
+      </div>
+
+      <div class="row g-3" id="servicesGrid">
+        <!-- Template of service cards. We'll include many service entries here. -->
+
+        <!-- CNIC -->
+        <div class="col-sm-6 col-lg-4">
+          <article class="service-card" data-title="CNIC national identity card">
+            <div class="service-head">
+              <div class="service-icon" style="background: linear-gradient(135deg,#0b5ed7,#198754);">
+                <i class="bi bi-person-badge"></i>
+              </div>
+              <div>
+                <h5 class="mb-0">CNIC (National Identity Card)</h5>
+                <div class="small-note">NADRA identity & updates</div>
+              </div>
+            </div>
+
+            <div class="service-body">
+              <p>Apply for new CNIC or renew/update personal details. Officially issued by NADRA.</p>
+              <ul class="mb-0">
+                <li>Birth certificate / Form-B (first time)</li>
+                <li>Parents' CNICs (if required)</li>
+                <li>Proof of residence (for address change)</li>
+              </ul>
+            </div>
+
+            <div class="service-foot d-flex justify-content-between align-items-center">
+              <div>
+                <span class="badge bg-light text-muted badge-region">Nationwide</span>
+              </div>
+              <div>
+                <button class="btn btn-sm btn-outline-primary me-2" data-bs-toggle="modal" data-bs-target="#detailModal" data-service='{"title":"CNIC","desc":"National identity card by NADRA. Apply / renew / update.","docs":["Birth certificate / Form-B","Parents CNIC copies","Proof of residence"],"link":"https://id.nadra.gov.pk","linkText":"NADRA Pak-Identity"}'>Details</button>
+                <a class="btn btn-sm btn-success" href="https://id.nadra.gov.pk" target="_blank">Apply Online</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Passport -->
+        <div class="col-sm-6 col-lg-4">
+          <article class="service-card" data-title="Passport Pakistan DGIP passport renewal first time">
+            <div class="service-head">
+              <div class="service-icon" style="background: linear-gradient(135deg,#198754,#0b5ed7);">
+                <i class="bi bi-passport"></i>
+              </div>
+              <div>
+                <h5 class="mb-0">Passport (First-time & Renewal)</h5>
+                <div class="small-note">DGIP — Machine Readable Passport</div>
+              </div>
+            </div>
+
+            <div class="service-body">
+              <p>Apply for a new passport or renew your existing one. Online MRP portal supported for renewals.</p>
+              <ul class="mb-0">
+                <li>CNIC / B-Form (for minors)</li>
+                <li>Old passport (renewal)</li>
+                <li>Passport sized photos / biometrics</li>
+              </ul>
+            </div>
+
+            <div class="service-foot d-flex justify-content-between align-items-center">
+              <div><span class="badge bg-light text-muted badge-region">Federal</span></div>
+              <div>
+                <button class="btn btn-sm btn-outline-primary me-2" data-bs-toggle="modal" data-bs-target="#detailModal" data-service='{"title":"Passport","desc":"Apply for new passport or renew via DGIP MRP online portal.","docs":["CNIC / B-Form","Old passport (renewal)","Passport photos / biometrics"],"link":"https://onlinemrp.dgip.gov.pk","linkText":"DGIP Online MRP"}'>Details</button>
+                <a class="btn btn-sm btn-success" href="https://onlinemrp.dgip.gov.pk" target="_blank">Apply Online</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Driving License -->
+        <div class="col-sm-6 col-lg-4">
+          <article class="service-card" data-title="Driving license dlims learner renewal">
+            <div class="service-head">
+              <div class="service-icon" style="background: linear-gradient(135deg,#0b5ed7,#0d6efd);">
+                <i class="bi bi-car-front"></i>
+              </div>
+              <div>
+                <h5 class="mb-0">Driving Licence</h5>
+                <div class="small-note">Provincial Traffic / Excise offices</div>
+              </div>
+            </div>
+
+            <div class="service-body">
+              <p>Get learner or permanent licence. Process and portal varies by province (Punjab DLIMS, Sindh, KP).</p>
+              <ul class="mb-0">
+                <li>CNIC copy</li>
+                <li>Medical certificate (if applicable)</li>
+                <li>Passport-size photos</li>
+              </ul>
+            </div>
+
+            <div class="service-foot d-flex justify-content-between align-items-center">
+              <div><span class="badge bg-light text-muted badge-region">Provincial</span></div>
+              <div>
+                <button class="btn btn-sm btn-outline-primary me-2" data-bs-toggle="modal" data-bs-target="#detailModal" data-service='{"title":"Driving Licence","desc":"Apply for learner or permanent driving licence. Provincial portals like DLIMS (Punjab) available.","docs":["CNIC copy","Medical certificate","Photos"],"link":"https://dlims.punjab.gov.pk","linkText":"DLIMS Punjab"}'>Details</button>
+                <a class="btn btn-sm btn-success" href="https://dlims.punjab.gov.pk" target="_blank">Apply Online</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Vehicle Number Plate -->
+        <div class="col-sm-6 col-lg-4">
+          <article class="service-card" data-title="Vehicle number plate excise registration">
+            <div class="service-head">
+              <div class="service-icon" style="background: linear-gradient(135deg,#0d6efd,#20c997);">
+                <i class="bi bi-key"></i>
+              </div>
+              <div>
+                <h5 class="mb-0">Vehicle Number Plate</h5>
+                <div class="small-note">Provincial Excise & Taxation</div>
+              </div>
+            </div>
+
+            <div class="service-body">
+              <p>Official number plate issuance and vehicle registration services via provincial Excise departments.</p>
+              <ul class="mb-0">
+                <li>Vehicle registration / smart card</li>
+                <li>Owner CNIC</li>
+                <li>Fee receipt</li>
+              </ul>
+            </div>
+
+            <div class="service-foot d-flex justify-content-between align-items-center">
+              <div><span class="badge bg-light text-muted badge-region">Provincial</span></div>
+              <div>
+                <button class="btn btn-sm btn-outline-primary me-2" data-bs-toggle="modal" data-bs-target="#detailModal" data-service='{"title":"Vehicle Number Plate","desc":"Apply via provincial Excise portal for number plates and tax payment.","docs":["Vehicle registration","Owner CNIC","Fee receipt"],"link":"https://mtmis.excise.gos.pk","linkText":"Provincial Excise (example)"}'>Details</button>
+                <a class="btn btn-sm btn-success" href="https://mtmis.excise.gos.pk" target="_blank">Apply Online</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- B-Form / Child Registration -->
+        <div class="col-sm-6 col-lg-4">
+          <article class="service-card" data-title="B-Form child registration nadra">
+            <div class="service-head">
+              <div class="service-icon" style="background: linear-gradient(135deg,#20c997,#0b5ed7);">
+                <i class="bi bi-person-plus"></i>
+              </div>
+              <div>
+                <h5 class="mb-0">B-Form (Child Registration)</h5>
+                <div class="small-note">NADRA child registration</div>
+              </div>
+            </div>
+
+            <div class="service-body">
+              <p>Register newborns and get B-Form for future CNIC issuance.</p>
+              <ul class="mb-0">
+                <li>Parents CNICs</li>
+                <li>Hospital birth slip</li>
+              </ul>
+            </div>
+
+            <div class="service-foot d-flex justify-content-between align-items-center">
+              <div><span class="badge bg-light text-muted badge-region">Nationwide</span></div>
+              <div>
+                <button class="btn btn-sm btn-outline-primary me-2" data-bs-toggle="modal" data-bs-target="#detailModal" data-service='{"title":"B-Form (Child Registration)","desc":"Register newborns with NADRA to get B-Form used later for CNIC.","docs":["Parents CNICs","Birth slip"],"link":"https://id.nadra.gov.pk","linkText":"NADRA"}'>Details</button>
+                <a class="btn btn-sm btn-success" href="https://id.nadra.gov.pk" target="_blank">Apply Online</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Birth Certificate -->
+        <div class="col-sm-6 col-lg-4">
+          <article class="service-card" data-title="Birth certificate union council register">
+            <div class="service-head">
+              <div class="service-icon" style="background: linear-gradient(135deg,#0b5ed7,#0d6efd);">
+                <i class="bi bi-file-earmark-text"></i>
+              </div>
+              <div>
+                <h5 class="mb-0">Birth Certificate</h5>
+                <div class="small-note">Issued by local Union Council / NADRA</div>
+              </div>
+            </div>
+
+            <div class="service-body">
+              <p>Official birth record issued via Union Council or NADRA depending on location.</p>
+              <ul class="mb-0">
+                <li>Hospital birth slip</li>
+                <li>Parents CNIC</li>
+              </ul>
+            </div>
+
+            <div class="service-foot d-flex justify-content-between align-items-center">
+              <div><span class="badge bg-light text-muted badge-region">Local</span></div>
+              <div>
+                <button class="btn btn-sm btn-outline-primary me-2" data-bs-toggle="modal" data-bs-target="#detailModal" data-service='{"title":"Birth Certificate","desc":"Request birth certificate from Union Council or via provincial service portal.","docs":["Hospital birth slip","Parents CNIC"],"link":"https://punjab.gov.pk","linkText":"Provincial Example"}'>Details</button>
+                <a class="btn btn-sm btn-success" href="https://punjab.gov.pk" target="_blank">Apply Online</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Marriage Certificate -->
+        <div class="col-sm-6 col-lg-4">
+          <article class="service-card" data-title="Marriage certificate nikah registered nikahnama">
+            <div class="service-head">
+              <div class="service-icon" style="background: linear-gradient(135deg,#0d6efd,#198754);">
+                <i class="bi bi-heart-pulse"></i>
+              </div>
+              <div>
+                <h5 class="mb-0">Marriage Certificate</h5>
+                <div class="small-note">Register Nikah / Marriage</div>
+              </div>
+            </div>
+
+            <div class="service-body">
+              <p>Register marriage (Nikah) and obtain official marriage certificate for records and legal use.</p>
+              <ul class="mb-0">
+                <li>Nikah Nama</li>
+                <li>CNICs of spouses and witnesses</li>
+              </ul>
+            </div>
+
+            <div class="service-foot d-flex justify-content-between align-items-center">
+              <div><span class="badge bg-light text-muted badge-region">Local</span></div>
+              <div>
+                <button class="btn btn-sm btn-outline-primary me-2" data-bs-toggle="modal" data-bs-target="#detailModal" data-service='{"title":"Marriage Certificate","desc":"Register marriage at Union Council / local registrar. Keep Nikah Nama and CNICs.","docs":["Nikah Nama","CNICs of spouses & witnesses"],"link":"https://punjab.gov.pk","linkText":"Provincial Example"}'>Details</button>
+                <a class="btn btn-sm btn-success" href="https://punjab.gov.pk" target="_blank">Apply Online</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Death Certificate -->
+        <div class="col-sm-6 col-lg-4">
+          <article class="service-card" data-title="Death certificate register report hospital death slip">
+            <div class="service-head">
+              <div class="service-icon" style="background: linear-gradient(135deg,#6c757d,#0b5ed7);">
+                <i class="bi bi-file-earmark-medical"></i>
+              </div>
+              <div>
+                <h5 class="mb-0">Death Certificate</h5>
+                <div class="small-note">Official death registration</div>
+              </div>
+            </div>
+
+            <div class="service-body">
+              <p>Register a death and obtain official death certificate for legal formalities and family claims.</p>
+              <ul class="mb-0">
+                <li>Hospital death slip / report</li>
+                <li>CNIC of deceased (if available)</li>
+                <li>CNIC of claimant</li>
+              </ul>
+            </div>
+
+            <div class="service-foot d-flex justify-content-between align-items-center">
+              <div><span class="badge bg-light text-muted badge-region">Local</span></div>
+              <div>
+                <button class="btn btn-sm btn-outline-primary me-2" data-bs-toggle="modal" data-bs-target="#detailModal" data-service='{"title":"Death Certificate","desc":"Register death with Union Council or hospital registrar. Submit report and IDs.","docs":["Hospital death report","Heir CNIC","Deceased CNIC if available"],"link":"https://punjab.gov.pk","linkText":"Provincial Example"}'>Details</button>
+                <a class="btn btn-sm btn-success" href="https://punjab.gov.pk" target="_blank">Apply Online</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Domicile -->
+        <div class="col-sm-6 col-lg-4">
+          <article class="service-card" data-title="Domicile certificate residence prc">
+            <div class="service-head">
+              <div class="service-icon" style="background: linear-gradient(135deg,#20c997,#0b5ed7);">
+                <i class="bi bi-building"></i>
+              </div>
+              <div>
+                <h5 class="mb-0">Domicile / PRC</h5>
+                <div class="small-note">Proof of district residence</div>
+              </div>
+            </div>
+
+            <div class="service-body">
+              <p>Obtain domicile certificate for provincial residency proof and quota purposes.</p>
+              <ul class="mb-0">
+                <li>CNIC</li>
+                <li>Education or residence proof</li>
+                <li>Parents/spouse CNIC (if required)</li>
+              </ul>
+            </div>
+
+            <div class="service-foot d-flex justify-content-between align-items-center">
+              <div><span class="badge bg-light text-muted badge-region">Provincial</span></div>
+              <div>
+                <button class="btn btn-sm btn-outline-primary me-2" data-bs-toggle="modal" data-bs-target="#detailModal" data-service='{"title":"Domicile / PRC","desc":"Apply at DC office or provincial portal for domicile/PRC issuance.","docs":["CNIC","Proof of residence","Parents CNIC"],"link":"https://punjab.gov.pk","linkText":"Provincial Example"}'>Details</button>
+                <a class="btn btn-sm btn-success" href="https://punjab.gov.pk" target="_blank">Apply Online</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Property Transfer -->
+        <div class="col-sm-6 col-lg-4">
+          <article class="service-card" data-title="Property transfer mutation sale deed registry">
+            <div class="service-head">
+              <div class="service-icon" style="background: linear-gradient(135deg,#0b5ed7,#20c997);">
+                <i class="bi bi-house"></i>
+              </div>
+              <div>
+                <h5 class="mb-0">Property Transfer / Mutation</h5>
+                <div class="small-note">Land / property ownership transfer</div>
+              </div>
+            </div>
+
+            <div class="service-body">
+              <p>Complete property transfers, mutations, and registry updates at local land record office.</p>
+              <ul class="mb-0">
+                <li>CNIC</li>
+                <li>Original property documents</li>
+                <li>Sale deed / transfer papers</li>
+              </ul>
+            </div>
+
+            <div class="service-foot d-flex justify-content-between align-items-center">
+              <div><span class="badge bg-light text-muted badge-region">Local</span></div>
+              <div>
+                <button class="btn btn-sm btn-outline-primary me-2" data-bs-toggle="modal" data-bs-target="#detailModal" data-service='{"title":"Property Transfer","desc":"Register transfer/mutation with local land record office. Provide deeds and IDs.","docs":["Property documents","Sale deed","CNIC"],"link":"https://punjab.gov.pk","linkText":"Provincial Example"}'>Details</button>
+                <a class="btn btn-sm btn-success" href="https://punjab.gov.pk" target="_blank">Apply Online</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Pension -->
+        <div class="col-sm-6 col-lg-4">
+          <article class="service-card" data-title="Pension retired government employees pension office">
+            <div class="service-head">
+              <div class="service-icon" style="background: linear-gradient(135deg,#198754,#0b5ed7);">
+                <i class="bi bi-wallet2"></i>
+              </div>
+              <div>
+                <h5 class="mb-0">Pension</h5>
+                <div class="small-note">Government employee retirement benefits</div>
+              </div>
+            </div>
+
+            <div class="service-body">
+              <p>Guidance for claiming pension: submit service record, retirement notification, bank & nominee details.</p>
+              <ul class="mb-0">
+                <li>CNIC</li>
+                <li>Service record</li>
+                <li>Retirement notification</li>
+              </ul>
+            </div>
+
+            <div class="service-foot d-flex justify-content-between align-items-center">
+              <div><span class="badge bg-light text-muted badge-region">Federal/Provincial</span></div>
+              <div>
+                <button class="btn btn-sm btn-outline-primary me-2" data-bs-toggle="modal" data-bs-target="#detailModal" data-service='{"title":"Pension","desc":"Apply via Finance Department / Pension Office. Provide service and bank records.","docs":["CNIC","Service record","Retirement notification"],"link":"https://www.agpunjab.gov.pk","linkText":"Example: Accountant General"}'>Details</button>
+                <a class="btn btn-sm btn-success" href="https://www.agpunjab.gov.pk" target="_blank">More Info</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- BISP -->
+        <div class="col-sm-6 col-lg-4">
+          <article class="service-card" data-title="BISP benazir income support program 8171">
+            <div class="service-head">
+              <div class="service-icon" style="background: linear-gradient(135deg,#0b5ed7,#6f42c1);">
+                <i class="bi bi-people"></i>
+              </div>
+              <div>
+                <h5 class="mb-0">BISP (Benazir Income Support)</h5>
+                <div class="small-note">Cash assistance & social protection</div>
+              </div>
+            </div>
+
+            <div class="service-body">
+              <p>Check eligibility and register for social cash transfers and support programs.</p>
+              <ul class="mb-0">
+                <li>CNIC</li>
+                <li>Family registration</li>
+              </ul>
+            </div>
+
+            <div class="service-foot d-flex justify-content-between align-items-center">
+              <div><span class="badge bg-light text-muted badge-region">Nationwide</span></div>
+              <div>
+                <button class="btn btn-sm btn-outline-primary me-2" data-bs-toggle="modal" data-bs-target="#detailModal" data-service='{"title":"BISP","desc":"Social cash support program. Check eligibility online or via helplines.","docs":["CNIC","Family registration"],"link":"https://bisp.gov.pk","linkText":"BISP"}'>Details</button>
+                <a class="btn btn-sm btn-success" href="https://bisp.gov.pk" target="_blank">Apply Online</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Sehat Card -->
+        <div class="col-sm-6 col-lg-4">
+          <article class="service-card" data-title="Sehat sahulat sehat card health program">
+            <div class="service-head">
+              <div class="service-icon" style="background: linear-gradient(135deg,#0d6efd,#20c997);">
+                <i class="bi bi-heart"></i>
+              </div>
+              <div>
+                <h5 class="mb-0">Sehat Card / Health Program</h5>
+                <div class="small-note">Social health insurance & hospital coverage</div>
+              </div>
+            </div>
+
+            <div class="service-body">
+              <p>Enroll families for medical coverage and hospitalization benefits under provincial/national schemes.</p>
+              <ul class="mb-0">
+                <li>CNIC</li>
+                <li>Family details</li>
+              </ul>
+            </div>
+
+            <div class="service-foot d-flex justify-content-between align-items-center">
+              <div><span class="badge bg-light text-muted badge-region">Provincial/National</span></div>
+              <div>
+                <button class="btn btn-sm btn-outline-primary me-2" data-bs-toggle="modal" data-bs-target="#detailModal" data-service='{"title":"Sehat Card","desc":"Check CNIC eligibility and enroll for provincial/national health schemes.","docs":["CNIC","Family details"],"link":"https://www.pmhealthprogram.gov.pk","linkText":"PM Health Program"}'>Details</button>
+                <a class="btn btn-sm btn-success" href="https://www.pmhealthprogram.gov.pk" target="_blank">Apply Online</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Tax / NTN (FBR) -->
+        <div class="col-sm-6 col-lg-4">
+          <article class="service-card" data-title="Tax NTN FBR iris">
+            <div class="service-head">
+              <div class="service-icon" style="background: linear-gradient(135deg,#fd7e14,#0b5ed7);">
+                <i class="bi bi-receipt"></i>
+              </div>
+              <div>
+                <h5 class="mb-0">Tax / NTN (FBR)</h5>
+                <div class="small-note">Income tax registration & filings</div>
+              </div>
+            </div>
+
+            <div class="service-body">
+              <p>Register for NTN and file taxes via FBR IRIS portal. Important for salaried & business persons.</p>
+              <ul class="mb-0">
+                <li>CNIC</li>
+                <li>SIM registered in your name</li>
+                <li>Bank / employment details</li>
+              </ul>
+            </div>
+
+            <div class="service-foot d-flex justify-content-between align-items-center">
+              <div><span class="badge bg-light text-muted badge-region">Federal</span></div>
+              <div>
+                <button class="btn btn-sm btn-outline-primary me-2" data-bs-toggle="modal" data-bs-target="#detailModal" data-service='{"title":"Tax / NTN","desc":"Register on FBR IRIS to get NTN and manage tax profiles online.","docs":["CNIC","SIM registered in your name","Bank details"],"link":"https://iris.fbr.gov.pk","linkText":"FBR IRIS"}'>Details</button>
+                <a class="btn btn-sm btn-success" href="https://iris.fbr.gov.pk" target="_blank">Apply Online</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- SECP company registration -->
+        <div class="col-sm-6 col-lg-4">
+          <article class="service-card" data-title="SECP company registration incorporation">
+            <div class="service-head">
+              <div class="service-icon" style="background: linear-gradient(135deg,#6f42c1,#0b5ed7);">
+                <i class="bi bi-briefcase"></i>
+              </div>
+              <div>
+                <h5 class="mb-0">SECP — Company Registration</h5>
+                <div class="small-note">Incorporation & eServices</div>
+              </div>
+            </div>
+
+            <div class="service-body">
+              <p>Reserve company name and incorporate businesses via SECP eServices portal.</p>
+              <ul class="mb-0">
+                <li>Directors' CNIC/NICOP</li>
+                <li>Company address & proposed name</li>
+              </ul>
+            </div>
+
+            <div class="service-foot d-flex justify-content-between align-items-center">
+              <div><span class="badge bg-light text-muted badge-region">Federal</span></div>
+              <div>
+                <button class="btn btn-sm btn-outline-primary me-2" data-bs-toggle="modal" data-bs-target="#detailModal" data-service='{"title":"SECP","desc":"Company name reservation and online incorporation via SECP eServices.","docs":["Directors CNICs","Company documents"],"link":"https://eservices.secp.gov.pk","linkText":"SECP eServices"}'>Details</button>
+                <a class="btn btn-sm btn-success" href="https://eservices.secp.gov.pk" target="_blank">Apply Online</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- HEC degree attestation -->
+        <div class="col-sm-6 col-lg-4">
+          <article class="service-card" data-title="HEC degree attestation verification">
+            <div class="service-head">
+              <div class="service-icon" style="background: linear-gradient(135deg,#0b5ed7,#20c997);">
+                <i class="bi bi-journal-text"></i>
+              </div>
+              <div>
+                <h5 class="mb-0">HEC — Degree Attestation</h5>
+                <div class="small-note">Academic verification & attestation</div>
+              </div>
+            </div>
+
+            <div class="service-body">
+              <p>Submit degrees & transcripts for HEC attestation required for overseas employment and higher studies.</p>
+              <ul class="mb-0">
+                <li>Original degree & transcripts</li>
+                <li>CNIC</li>
+              </ul>
+            </div>
+
+            <div class="service-foot d-flex justify-content-between align-items-center">
+              <div><span class="badge bg-light text-muted badge-region">Federal</span></div>
+              <div>
+                <button class="btn btn-sm btn-outline-primary me-2" data-bs-toggle="modal" data-bs-target="#detailModal" data-service='{"title":"HEC Degree Attestation","desc":"Apply via HEC eServices for degree verification and attestation.","docs":["Original degree","Transcript","CNIC"],"link":"https://eservices.hec.gov.pk","linkText":"HEC eServices"}'>Details</button>
+                <a class="btn btn-sm btn-success" href="https://eservices.hec.gov.pk" target="_blank">Apply Online</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+      </div> <!-- end grid -->
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="py-5 bg-white">
+    <div class="container">
+      <h3 class="mb-3">FAQ — Common Questions</h3>
+      <div class="row g-3">
+        <div class="col-lg-8">
+          <div class="faq-card">
+            <div class="accordion" id="faqAcc">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="q1">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c1">How do I renew my CNIC online?</button>
+                </h2>
+                <div id="c1" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
+                  <div class="accordion-body">
+                    For renewal or modification you can use NADRA Pak-Identity portal (select renewal/issue option), or visit a NADRA Registration Centre with documents and biometrics.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="q2">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c2">What documents are needed for passport renewal?</button>
+                </h2>
+                <div id="c2" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
+                  <div class="accordion-body">
+                    You need your old passport, CNIC, passport photos or updated biometric info. Renewals can often be started on DGIP MRP portal.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="q3">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c3">How can I check my BISP or Ehsaas eligibility?</button>
+                </h2>
+                <div id="c3" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
+                  <div class="accordion-body">
+                    Visit the official BISP or Ehsaas portal and enter your CNIC or use the helpline codes (where available) to check eligibility and status.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="q4">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c4">Who issues domicile certificates?</button>
+                </h2>
+                <div id="c4" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
+                  <div class="accordion-body">
+                    Domicile / PRC certificates are issued by District/Deputy Commissioner offices or via provincial online portals depending on the province.
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="p-3 h-100" style="background:linear-gradient(180deg,#f8fafc,#fff); border-radius:10px; border:1px solid rgba(11,94,215,0.04);">
+            <h6>Need Help?</h6>
+            <p class="small-note">If you need more help preparing documents, contact the help desk below or use our Contact form.</p>
+            <a class="btn btn-sm btn-primary" href="#contact">Contact Us</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-5">
+    <div class="container">
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-6">
+          <h3>Contact & Support</h3>
+          <p class="small-note">Send us questions about how to apply, required documents, or if you need the official link updated.</p>
+
+          <ul class="list-unstyled small-note">
+            <li><strong>Email:</strong> info@govguide.pk</li>
+            <li><strong>Phone:</strong> +92 300 0000000 (example)</li>
+            <li><strong>Address:</strong> Islamabad, Pakistan</li>
+          </ul>
+        </div>
+
+        <div class="col-lg-6">
+          <form id="contactForm" class="p-3" style="background:#fff; border-radius:10px; border:1px solid rgba(11,94,215,0.04);">
+            <div class="mb-3">
+              <label class="form-label">Name</label>
+              <input class="form-control" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Email</label>
+              <input class="form-control" type="email" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Message</label>
+              <textarea class="form-control" rows="4" required></textarea>
+            </div>
+            <div class="text-end">
+              <button class="btn btn-primary" type="submit">Send Message</button>
+            </div>
+            <div id="contactNote" class="mt-2 small-note"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <p class="mb-0">© 2025 Gov Simplified — Built for Aptech AI Diploma Project</p>
+          <p class="small-note mb-0">Official links are provided but always verify fees and processing time on the official portals.</p>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <a class="me-3" href="#"><i class="bi bi-facebook"></i></a>
+          <a class="me-3" href="#"><i class="bi bi-twitter"></i></a>
+          <a class="me-3" href="#"><i class="bi bi-envelope"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Detail Modal -->
+  <div class="modal fade" id="detailModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalTitle">Service Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <p id="modalDesc"></p>
+          <h6>Required Documents</h6>
+          <ul id="modalDocs"></ul>
+          <div id="modalExtra" class="small-note"></div>
+        </div>
+        <div class="modal-footer">
+          <a id="modalLink" href="#" target="_blank" class="btn btn-success">Open Official Portal</a>
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // ---------- Search & filter ----------
+    const searchInput = document.getElementById('searchInput');
+    const searchBtn = document.getElementById('searchBtn');
+    const grid = document.getElementById('servicesGrid');
+    const cards = Array.from(grid.querySelectorAll('.service-card'));
+    const visibleCountEl = document.getElementById('visibleCount');
+
+    function filterServices(query){
+      const q = (query||'').trim().toLowerCase();
+      let visible = 0;
+      grid.querySelectorAll('.col-sm-6').forEach(col => {
+        const card = col.querySelector('.service-card');
+        const text = (card.getAttribute('data-title') || card.innerText).toLowerCase();
+        if(!q || text.includes(q)){
+          col.style.display = '';
+          visible++;
+        } else {
+          col.style.display = 'none';
+        }
+      });
+      visibleCountEl.innerText = visible;
+    }
+
+    searchBtn.addEventListener('click', ()=> filterServices(searchInput.value));
+    searchInput.addEventListener('keydown', (e)=> { if(e.key === 'Enter') filterServices(searchInput.value); });
+
+    // ---------- Modal detail population ----------
+    const detailModal = document.getElementById('detailModal');
+    detailModal.addEventListener('show.bs.modal', function (event) {
+      const btn = event.relatedTarget;
+      const svc = JSON.parse(btn.getAttribute('data-service'));
+      document.getElementById('modalTitle').innerText = svc.title || 'Service';
+      document.getElementById('modalDesc').innerText = svc.desc || '';
+      const docsEl = document.getElementById('modalDocs');
+      docsEl.innerHTML = '';
+      (svc.docs || []).forEach(d => {
+        const li = document.createElement('li'); li.innerText = d; docsEl.appendChild(li);
+      });
+      const modalLink = document.getElementById('modalLink');
+      modalLink.href = svc.link || '#';
+      modalLink.innerText = svc.linkText ? `Open ${svc.linkText}` : 'Open Official Portal';
+      document.getElementById('modalExtra').innerText = svc.extra || '';
+    });
+
+    // ---------- Contact form (static) ----------
+    const contactForm = document.getElementById('contactForm');
+    const contactNote = document.getElementById('contactNote');
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      contactNote.innerText = 'Message sent (demo). For a real site, connect this form to your email/server.';
+      contactForm.reset();
+      setTimeout(()=> contactNote.innerText = '', 6000);
+    });
+
+    // ---------- Language switch placeholder ----------
+    document.querySelectorAll('.lang-option').forEach(el=>{
+      el.addEventListener('click', (ev)=>{
+        ev.preventDefault();
+        const lang = el.dataset.lang;
+        document.getElementById('langBtn').innerText = (lang === 'en' ? 'English' : 'اردو (Soon)');
+        // NOTE: full translation not implemented — this is a placeholder for future translation integration.
+        alert(lang === 'en' ? 'English selected' : 'Urdu support coming soon — you can add translations manually.');
+      });
+    });
+
+    // Init visible count
+    filterServices('');
+  </script>
+</body>
+</html>
